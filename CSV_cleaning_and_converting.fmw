@@ -1,0 +1,2007 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command-line to run this workspace:
+#        /Library/FME/2020.0/fme /Users/jeremyherbert/Downloads/FMEData2019/Workspaces/CSV_cleaning_and_converting.fmw
+#              --DestDataset_SHAPEFILE_5 "/Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data"
+#              --DestDataset_SHAPEFILE "/Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data"
+#              --DestDataset_SHAPEFILE_4 "/Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data"
+#              --SourceDataset_CSV2_3 "https://raw.githubusercontent.com/jerguy1928/FME_work/master/AB_NYC_2019.csv"
+#    
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="6501.35 492.25"
+#!   DOC_TOP_LEFT="-194.349 488.5"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="20200"
+#!   FME_DOCUMENT_GUID="e2cbdf9c-c66f-4105-8aae-99fdcd14185a"
+#!   FME_DOCUMENT_PRIORGUID="1d9daf17-1ffe-4a76-b154-c3c063cf05c8,2a59e30f-8150-4d56-a77a-1e9a83d565b3"
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2020.0.0.0 (20200309 - Build 20200 - macosx)"
+#!   LAST_SAVE_DATE="2020-03-30T15:45:18"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-717.195 1560.95"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="64"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="CSV2"
+#!   DATASET="$(SourceDataset_CSV2_3)"
+#!   KEYWORD="CSV2_2"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_rotation string fme_feature_type string fme_start_angle string fme_color string fme_text_size string fme_text_string string fme_dataset string fme_sweep_angle string multi_reader_full_id string fme_geometry string csv_type string csv_skipped_line string multi_reader_type string csv_total_number_of_columns uint32 fme_fill_color string fme_type string fme_secondary_axis string csv_number_of_fields uint32 csv_line_number uint64 multi_reader_keyword string fme_basename string fme_primary_axis string multi_reader_id string"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   COORDSYS=""
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="csv file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_ATTR_TYPE"
+#!   VALUE="string"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="File1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="CSV File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the CSV file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the CSV file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="SHAPEFILE"
+#!   DATASET="$(DestDataset_SHAPEFILE_5)"
+#!   KEYWORD="SHAPEFILE_2"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="10"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="shapefile_type {FME_GEN_GEOMETRY}"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_fill_color char(50) fme_secondary_axis double shapefile_type char(30) fme_color char(50) fme_basename char(50) fme_start_angle double fme_text_size double fme_dataset char(50) fme_text_string char(50) fme_sweep_angle double fme_type char(50) fme_feature_type char(50) fme_primary_axis double fme_geometry char(50) fme_rotation double"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP shape_layer_group DIMENSION Shapefile&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE DIMENSION Dimension&lt;space&gt;From&lt;space&gt;First&lt;space&gt;Feature,AUTO%2D,2D%2D&lt;space&gt;+&lt;space&gt;Measures,2DM%3D&lt;space&gt;+&lt;space&gt;Measures,3DM Output Dimension:&quot; AUTO "
+#!   ATTR_INDEX_TYPES="Indexed"
+#!   ATTR_NAME_INVALID_CHARS=". -%[]&quot;!?*&apos;&amp;\/{}"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   COORDSYS=""
+#!   FANOUT_EXPRESSION=""
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="SHAPEFILE_OUT_SURFACE_SOLID_STORAGE SHAPEFILE_OUT_MEASURES_AS_Z"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="shp file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_GEOMETRY_TYPE"
+#!   VALUE="shapefile_first_feature"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Shapefile1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Shapefile"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the Esri Shapefile(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the Esri Shapefile"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="SHAPEFILE"
+#!   DATASET="$(DestDataset_SHAPEFILE)"
+#!   KEYWORD="SHAPEFILE_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="10"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="shapefile_type {FME_GEN_GEOMETRY}"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_fill_color char(50) fme_secondary_axis double shapefile_type char(30) fme_color char(50) fme_basename char(50) fme_start_angle double fme_text_size double fme_dataset char(50) fme_text_string char(50) fme_sweep_angle double fme_type char(50) fme_feature_type char(50) fme_primary_axis double fme_geometry char(50) fme_rotation double"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP shape_layer_group DIMENSION Shapefile&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE DIMENSION Dimension&lt;space&gt;From&lt;space&gt;First&lt;space&gt;Feature,AUTO%2D,2D%2D&lt;space&gt;+&lt;space&gt;Measures,2DM%3D&lt;space&gt;+&lt;space&gt;Measures,3DM Output Dimension:&quot; AUTO "
+#!   ATTR_INDEX_TYPES="Indexed"
+#!   ATTR_NAME_INVALID_CHARS=". -%[]&quot;!?*&apos;&amp;\/{}"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   COORDSYS=""
+#!   FANOUT_EXPRESSION=""
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="SHAPEFILE_OUT_SURFACE_SOLID_STORAGE SHAPEFILE_OUT_MEASURES_AS_Z"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="shp file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_GEOMETRY_TYPE"
+#!   VALUE="shapefile_first_feature"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Shapefile1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Shapefile"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the Esri Shapefile(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the Esri Shapefile"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="SHAPEFILE"
+#!   DATASET="$(DestDataset_SHAPEFILE_4)"
+#!   KEYWORD="SHAPEFILE_3"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="10"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="shapefile_type {FME_GEN_GEOMETRY}"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_fill_color char(50) fme_secondary_axis double shapefile_type char(30) fme_color char(50) fme_basename char(50) fme_start_angle double fme_text_size double fme_dataset char(50) fme_text_string char(50) fme_sweep_angle double fme_type char(50) fme_feature_type char(50) fme_primary_axis double fme_geometry char(50) fme_rotation double"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP shape_layer_group DIMENSION Shapefile&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE DIMENSION Dimension&lt;space&gt;From&lt;space&gt;First&lt;space&gt;Feature,AUTO%2D,2D%2D&lt;space&gt;+&lt;space&gt;Measures,2DM%3D&lt;space&gt;+&lt;space&gt;Measures,3DM Output Dimension:&quot; AUTO "
+#!   ATTR_INDEX_TYPES="Indexed"
+#!   ATTR_NAME_INVALID_CHARS=". -%[]&quot;!?*&apos;&amp;\/{}"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="20200"
+#!   COORDSYS=""
+#!   FANOUT_EXPRESSION=""
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="SHAPEFILE_OUT_SURFACE_SOLID_STORAGE SHAPEFILE_OUT_MEASURES_AS_Z"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="shp file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_GEOMETRY_TYPE"
+#!   VALUE="shapefile_first_feature"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Shapefile1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Shapefile"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the Esri Shapefile(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the Esri Shapefile"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="real64"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="x_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="y_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="z_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="real32"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int64"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int32"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int16"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint64"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint32"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint16"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="uint8"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="boolean"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="datetime"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(12)"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(31,15)"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(11,0)"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(15,7)"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(20,0)"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="logical"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="short"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(6,0)"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="short"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(4,0)"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="short"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(4,0)"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="long"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(11,0)"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="long"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(6,0)"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_feature_table"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_map"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_multipoint"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_point"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_line"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_line"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_multipatch"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_multipatch"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_null"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_first_feature"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_feature_table"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_null"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="NYC Airbnb&apos;s with reviews"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="23"
+#!   FEAT_GEOMTYPE="shapefile_first_feature"
+#!   POSITION="4905.0008625086257 756.49879998799986"
+#!   BOUNDING_RECT="4905.0008625086257 756.49879998799986 654.45937500000002 71"
+#!   ORDER="500000000000028"
+#!   COLLAPSED="false"
+#!   KEYWORD="SHAPEFILE_3"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Place_ID" ATTR_TYPE="double" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Place_Name" ATTR_TYPE="char(254)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Borough" ATTR_TYPE="char(254)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Area" ATTR_TYPE="char(254)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Room_Type" ATTR_TYPE="char(254)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="USD_Night" ATTR_TYPE="long" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Min_Stay" ATTR_TYPE="long" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Host_ID" ATTR_TYPE="double" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Host_Name" ATTR_TYPE="char(254)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Latitude" ATTR_TYPE="double" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Longitude" ATTR_TYPE="double" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="DIMENSION" PARM_VALUE="AUTO"/>
+#!     <DEFLINE_PARM PARM_NAME="shape_layer_group" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="CSV"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="31"
+#!   FEAT_GEOMTYPE="csv_none csv_point"
+#!   POSITION="-194.34873439643525 645.83267196308338"
+#!   BOUNDING_RECT="-194.34873439643525 645.83267196308338 454 71"
+#!   ORDER="500000000000033"
+#!   COLLAPSED="false"
+#!   KEYWORD="CSV2_2"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="true"
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="id" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="name" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="host_id" ATTR_TYPE="uint32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="host_name" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="neighbourhood_group" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="neighbourhood" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="latitude" ATTR_TYPE="y_coordinate" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="longitude" ATTR_TYPE="x_coordinate" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="room_type" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="price" ATTR_TYPE="uint16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="minimum_nights" ATTR_TYPE="uint16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="number_of_reviews" ATTR_TYPE="uint16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="last_review" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="reviews_per_month" ATTR_TYPE="real32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="calculated_host_listings_count" ATTR_TYPE="uint8" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="availability_365" ATTR_TYPE="uint16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="CSV2_2"
+#!   OVERRIDE="-CSV2_2_DATASET"
+#!   DATASET="CSV2_2/AB_NYC_2019.csv"
+#! />
+#! </READER_DATASETS>
+#! <WRITER_DATASETS>
+#! <DATASET
+#!   NAME="SHAPEFILE_2"
+#!   OVERRIDE="-SHAPEFILE_2_DATASET"
+#!   DATASET="SHAPEFILE_2/new-york-city-airbnb-open-data"
+#! />
+#! <DATASET
+#!   NAME="SHAPEFILE_1"
+#!   OVERRIDE="-SHAPEFILE_1_DATASET"
+#!   DATASET="SHAPEFILE_1/new-york-city-airbnb-open-data"
+#! />
+#! <DATASET
+#!   NAME="SHAPEFILE_3"
+#!   OVERRIDE="-SHAPEFILE_3_DATASET"
+#!   DATASET="SHAPEFILE_3/new-york-city-airbnb-open-data"
+#! />
+#! </WRITER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI DIRNAME DestDataset_SHAPEFILE_5 Destination Esri Shapefile Folder:"
+#!   DEFAULT_VALUE="/Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI DIRNAME DestDataset_SHAPEFILE Destination Esri Shapefile Folder:"
+#!   DEFAULT_VALUE="/Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI DIRNAME DestDataset_SHAPEFILE_4 Destination Esri Shapefile Folder:"
+#!   DEFAULT_VALUE="/Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CSV2_3 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files|* Source CSV (Comma Separated Value) File(s):"
+#!   DEFAULT_VALUE="https://raw.githubusercontent.com/jerguy1928/FME_work/master/AB_NYC_2019.csv"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="14"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ensure valid price (&amp;gt;0)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="727.5 768.50120001200014"
+#!   TOP_LEFT="727.5 768.50120001200014"
+#!   BOTTOM_RIGHT="1157.5 767.50120001200014"
+#!   BOUNDING_RECT="727.5 768.50120001200014 430 1"
+#!   ORDER="500000000000010"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="6"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="16"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Looking for shorter term airbnbs (minimum stay 30 nights or less)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1370.5 864.50216002160028"
+#!   TOP_LEFT="1370.5 864.50216002160028"
+#!   BOTTOM_RIGHT="1800.5 863.50216002160028"
+#!   BOUNDING_RECT="1370.5 864.50216002160028 430 1"
+#!   ORDER="500000000000012"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="12"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="18"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Looking for unique listings,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;checking if any places have the same name and price (e.g. same room type in hotel)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2026.8406249999998 912.50264002640029"
+#!   TOP_LEFT="2026.8406249999998 912.50264002640029"
+#!   BOTTOM_RIGHT="2590.8406249999998 911.50264002640029"
+#!   BOUNDING_RECT="2026.8406249999998 912.50264002640029 564 1"
+#!   ORDER="500000000000013"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="10"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="25"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Place has received a review before&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2815.5 792.50144001440015"
+#!   TOP_LEFT="2815.5 792.50144001440015"
+#!   BOTTOM_RIGHT="3245.5 791.50144001440015"
+#!   BOUNDING_RECT="2815.5 792.50144001440015 430 1"
+#!   ORDER="500000000000029"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="21"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="28"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A host lists a valid name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="3458.5 792.50144001440026"
+#!   TOP_LEFT="3458.5 792.50144001440026"
+#!   BOTTOM_RIGHT="3888.5 791.50144001440026"
+#!   BOUNDING_RECT="3458.5 792.50144001440026 430 1"
+#!   ORDER="500000000000030"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="15"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="29"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Keeping useful attributes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="4104 980.75"
+#!   TOP_LEFT="4104 980.75"
+#!   BOTTOM_RIGHT="4558 979.75"
+#!   BOUNDING_RECT="4104 980.75 454 1"
+#!   ORDER="500000000000031"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="26"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="30"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica Neue&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Exporting Data to Shapefile&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="4867.0008625086257 960"
+#!   TOP_LEFT="4867.0008625086257 960"
+#!   BOTTOM_RIGHT="6307.0008625086257 959"
+#!   BOUNDING_RECT="4867.0008625086257 960 1440 1"
+#!   ORDER="500000000000032"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="23"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="765.5 583.5"
+#!   BOUNDING_RECT="765.5 583.5 430 71"
+#!   ORDER="500000000000005"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;price&lt;closeparen&gt; &gt; 0"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Price_Checker"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="DuplicateFilter"
+#!   VERSION="5"
+#!   POSITION="2064.8406249999998 583.5"
+#!   BOUNDING_RECT="2064.8406249999998 583.5 562.31875000000002 71"
+#!   ORDER="500000000000008"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="UNIQUE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="DUPLICATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INPUT_ORDERED_CHOICE" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="KEYATTR" PARM_VALUE="name price"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Remove_Duplicate_Places"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="1408.5 583.5"
+#!   BOUNDING_RECT="1408.5 583.5 430 71"
+#!   ORDER="500000000000009"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;minimum_nights&lt;closeparen&gt; &lt;= 30"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Minimum_Nights"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="21"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="2853.5 559.49975999759999"
+#!   BOUNDING_RECT="2853.5 559.49975999759999 430 71"
+#!   ORDER="500000000000014"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;number_of_reviews&lt;closeparen&gt; &gt; 0"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Has_Reviews"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="3496.5 559.49975999759999"
+#!   BOUNDING_RECT="3496.5 559.49975999759999 454 71"
+#!   ORDER="500000000000015"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="host_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood_group" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="neighbourhood" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="latitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="longitude" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="room_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="price" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="minimum_nights" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="number_of_reviews" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="last_review" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="reviews_per_month" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="calculated_host_listings_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="availability_365" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="COMPOSITE"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1 AND 2"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST host_name NOT_ATTRIBUTE_IS_EMPTY &quot;&quot;&#10;TEST &lt;at&gt;Value&lt;openparen&gt;host_name&lt;closeparen&gt; NOT_= &lt;openparen&gt;Email&lt;space&gt;hidden&lt;space&gt;by&lt;space&gt;Airbnb&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Valid_Host_Name"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="26"
+#!   TYPE="AttributeManager"
+#!   VERSION="2"
+#!   POSITION="4142 747.74831998319985"
+#!   BOUNDING_RECT="4142 747.74831998319985 454 71"
+#!   ORDER="500000000000025"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20200"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="Listing ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Listing Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Borough" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Neighborhood" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Latitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Longitude" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Type of Room" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Average price/night" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Minimum Stay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Host ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Host Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="id Listing&lt;space&gt;ID  RENAME_SET_VALUE name Listing&lt;space&gt;Name  RENAME_SET_VALUE neighbourhood_group Borough  RENAME_SET_VALUE neighbourhood Neighborhood  RENAME_SET_VALUE latitude Latitude  RENAME_SET_VALUE longitude Longitude  RENAME_SET_VALUE room_type Type&lt;space&gt;of&lt;space&gt;Room  RENAME_SET_VALUE price Average&lt;space&gt;price&lt;solidus&gt;night  RENAME_SET_VALUE minimum_nights Minimum&lt;space&gt;Stay  RENAME_SET_VALUE number_of_reviews number_of_reviews  REMOVE last_review last_review  REMOVE reviews_per_month reviews_per_month  REMOVE calculated_host_listings_count calculated_host_listings_count  REMOVE availability_365 availability_365  REMOVE host_id Host&lt;space&gt;ID  RENAME_SET_VALUE host_name Host&lt;space&gt;Name  RENAME_SET_VALUE"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="31"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="21"
+#!   SOURCE_PORT_DESC="fo 0 UNIQUE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="26"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! <ATTR_LINK
+#!   IDENTIFIER="65560"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="524312"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 10 OUTPUT"
+#!   TARGET_PORT_DESC="8"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="196632"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 3 OUTPUT"
+#!   TARGET_PORT_DESC="3"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="262168"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 6 OUTPUT"
+#!   TARGET_PORT_DESC="4"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="393240"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 8 OUTPUT"
+#!   TARGET_PORT_DESC="6"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="327704"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 7 OUTPUT"
+#!   TARGET_PORT_DESC="5"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="131096"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 1 OUTPUT"
+#!   TARGET_PORT_DESC="1"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="458776"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="ao 0 9 OUTPUT"
+#!   TARGET_PORT_DESC="7"
+#! />
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 37
+GUI IGNORE SourceDataset_CSV2_2,CSV2_IN_FIELDS_GROUP_CSV2_2,CSV2_IN_DELIMITER_CSV2_2,CSV2_IN_FIELD_NAMES_LINE_CSV2_2,CSV2_IN_DATA_START_LINE_CSV2_2,CSV2_IN_ADVANCED_GROUP_CSV2_2,CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_2,CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_2,CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_2,CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_2,CSV2_IN_FIELD_NAMES_GROUP_CSV2_2,CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_2,CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_2,CSV2_IN_FIELD_VALUES_GROUP_CSV2_2,CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_2,CSV2_IN_ENCODING_GROUP_CSV2_2,CSV2_IN_ENCODING_CSV2_2,CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_2,CSV2_IN_SKIPPED_LINES_GROUP_CSV2_2,CSV2_IN_READ_SKIPPED_LINES_CSV2_2,CSV2_IN_NETWORK_AUTHENTICATION_CSV2_2,DestDataset_SHAPEFILE_2,SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_2,SHAPEFILE_OUT_ENCODING_SHAPEFILE_2,SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_2,SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_2,SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_2,SHAPEFILE_OUT_ADVANCED_SHAPEFILE_2,SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_2,SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_2,SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_2,DestDataset_SHAPEFILE_1,SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_1,SHAPEFILE_OUT_ENCODING_SHAPEFILE_1,SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1,SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1,SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1,SHAPEFILE_OUT_ADVANCED_SHAPEFILE_1,SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1,SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1,SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1,DestDataset_SHAPEFILE_3,SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_3,SHAPEFILE_OUT_ENCODING_SHAPEFILE_3,SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_3,SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_3,SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_3,SHAPEFILE_OUT_ADVANCED_SHAPEFILE_3,SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_3,SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_3,SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_3
+DEFAULT_MACRO DestDataset_SHAPEFILE_5 /Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data
+GUI DIRNAME DestDataset_SHAPEFILE_5 Destination Esri Shapefile Folder:
+DEFAULT_MACRO DestDataset_SHAPEFILE /Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data
+GUI DIRNAME DestDataset_SHAPEFILE Destination Esri Shapefile Folder:
+DEFAULT_MACRO DestDataset_SHAPEFILE_4 /Users/jeremyherbert/Downloads/new-york-city-airbnb-open-data
+GUI DIRNAME DestDataset_SHAPEFILE_4 Destination Esri Shapefile Folder:
+DEFAULT_MACRO SourceDataset_CSV2_3 https://raw.githubusercontent.com/jerguy1928/FME_work/master/AB_NYC_2019.csv
+GUI MULTIFILE SourceDataset_CSV2_3 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files|* Source CSV (Comma Separated Value) File(s):
+INCLUDE [ if {{$(DestDataset_SHAPEFILE_5)} == {}} { puts_real {Parameter 'DestDataset_SHAPEFILE_5' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_SHAPEFILE)} == {}} { puts_real {Parameter 'DestDataset_SHAPEFILE' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_SHAPEFILE_4)} == {}} { puts_real {Parameter 'DestDataset_SHAPEFILE_4' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(SourceDataset_CSV2_3)} == {}} { puts_real {Parameter 'SourceDataset_CSV2_3' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} CSV2
+MULTI_READER_KEYWORD{0} CSV2_2
+MULTI_READER_GEN_DIRECTIVES{0} FIELDS_GROUP,,FIELD_NAMES_LINE,1,FIELD_NAMES_GROUP,,FEATURE_TYPE_NAME,FORMAT_NAME,FIELD_QUALIFIER_CHARACTER,<lt>quote<gt>,SKIPPED_LINES_GROUP,,DATA_START_LINE,2,DELIMITER,auto,USE_CUSTOM_SCHEMA,NO,SCAN_ADDITIONAL_FIELDS,No,ENFORCE_STRICT_SCHEMA,No,_MERGE_SCHEMAS,YES,DATASET_GROUP,,PRESERVE_SOURCE_ENCODING,No,SCAN_TYPES,Yes,CSV2_EXPOSE_FORMAT_ATTRS,,TRIM_FIELD_VALUE_QUALIFIERS,Yes,ADVANCED_GROUP,,SCHEMA_GENERATION_GROUP,,TRIM_FIELD_NAME_QUALIFIERS,Yes,CASE_SENSITIVE_FIELD_NAMES,Yes,ENCODING,UTF-8,SCAN_MAX_ROWS,10000,ENCODING_GROUP,,SCHEMA,,FIELD_QUALIFIER_ESCAPE_CHARACTER,<lt>quote<gt>,PREVIEW_PLACEHOLDER,,READ_SKIPPED_LINES,No,NETWORK_AUTHENTICATION,,FIELD_VALUES_GROUP,,FIELD_SEPARATION_GROUP,,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,EXPOSE_ATTRS_GROUP,,SKIP_DUPLICATE_DELIMITERS,No
+WRITER_TYPE MULTI_WRITER
+MULTI_WRITER_DATASET_ORDER BY_ID
+MULTI_WRITER_FIRST_WRITER_ID 0
+MULTI_WRITER_TYPE{0} SHAPEFILE
+MULTI_WRITER_KEYWORD{0} SHAPEFILE_2
+MULTI_WRITER_TYPE{1} SHAPEFILE
+MULTI_WRITER_KEYWORD{1} SHAPEFILE_1
+MULTI_WRITER_TYPE{2} SHAPEFILE
+MULTI_WRITER_KEYWORD{2} SHAPEFILE_3
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "CSV2_2"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CSV2 CSV2_2
+# =====================================================================
+# The following GUI line prompts for a file to be used as the source CSV file.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_CSV2_2 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CSV2 CSV2_2
+DEFAULT_MACRO SourceDataset_CSV2_2 $(SourceDataset_CSV2_3)
+GUI MULTIFILE SourceDataset_CSV2_2 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|All_Files|* Source CSV (Comma Separated Value) File(s):
+DEFAULT_MACRO CSV2_IN_FEATURE_TYPE_NAME_CSV2_2 FORMAT_NAME
+CSV2_2_FEATURE_TYPE_NAME "$(CSV2_IN_FEATURE_TYPE_NAME_CSV2_2)"
+DEFAULT_MACRO CSV2_IN_FIELDS_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELDS_GROUP_CSV2_2 CSV2_IN_DELIMITER_CSV2_2%CSV2_IN_FIELD_NAMES_LINE_CSV2_2%CSV2_IN_DATA_START_LINE_CSV2_2 Fields
+DEFAULT_MACRO CSV2_IN_DELIMITER_CSV2_2 auto
+CSV2_2_DELIMITER "$(CSV2_IN_DELIMITER_CSV2_2)"
+GUI STRING_OR_CHOICE_ENCODED CSV2_IN_DELIMITER_CSV2_2 auto%,%;%|%space%tab Delimiter Character:
+DEFAULT_MACRO CSV2_IN_FIELD_NAMES_LINE_CSV2_2 1
+CSV2_2_FIELD_NAMES_LINE "$(CSV2_IN_FIELD_NAMES_LINE_CSV2_2)"
+GUI OPTIONAL INT_OR_CHOICE CSV2_IN_FIELD_NAMES_LINE_CSV2_2 None%1%2%3%4%5 Field Names Line:
+GUI LOOKUP CSV2_IN_FIELD_NAMES_LINE_CSV2_2 None, 
+DEFAULT_MACRO CSV2_IN_DATA_START_LINE_CSV2_2 2
+CSV2_2_DATA_START_LINE "$(CSV2_IN_DATA_START_LINE_CSV2_2)"
+GUI RANGE_SLIDER CSV2_IN_DATA_START_LINE_CSV2_2 1%MAX%0 Data Start Line:
+DEFAULT_MACRO CSV2_IN_ADVANCED_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_ADVANCED_GROUP_CSV2_2 FME_DISCLOSURE_CLOSED%CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_2%CSV2_IN_FIELD_NAMES_GROUP_CSV2_2%CSV2_IN_FIELD_VALUES_GROUP_CSV2_2%CSV2_IN_ENCODING_GROUP_CSV2_2%CSV2_IN_SKIPPED_LINES_GROUP_CSV2_2%CSV2_IN_SCHEMA_GENERATION_GROUP Advanced
+DEFAULT_MACRO CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_2 FME_DISCLOSURE_CLOSED%CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_2%CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_2%CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_2 Field Separation
+DEFAULT_MACRO CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_2 No
+CSV2_2_SKIP_DUPLICATE_DELIMITERS "$(CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_2)"
+GUI CHOICE CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_2 Yes%No Skip Duplicate Delimiters:
+DEFAULT_MACRO CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_2 <quote>
+CSV2_2_FIELD_QUALIFIER_CHARACTER "$(CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_2)"
+GUI OPTIONAL STRING_ENCODED CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_2 Field Qualifier Character:
+DEFAULT_MACRO CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_2 <quote>
+CSV2_2_FIELD_QUALIFIER_ESCAPE_CHARACTER "$(CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_2)"
+GUI OPTIONAL STRING_ENCODED CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_2 Field Qualifier Escape Character:
+DEFAULT_MACRO CSV2_IN_FIELD_NAMES_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_NAMES_GROUP_CSV2_2 FME_DISCLOSURE_CLOSED%CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_2%CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_2 Field Names
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_NAME_QUALIFIERS_CSV2_2 Yes
+CSV2_2_TRIM_FIELD_NAME_QUALIFIERS "$(CSV2_IN_TRIM_FIELD_NAME_QUALIFIERS_CSV2_2)"
+DEFAULT_MACRO CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_2 Yes
+CSV2_2_CASE_SENSITIVE_FIELD_NAMES "$(CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_2)"
+GUI CHOICE CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_2 Yes%No Case Sensitive Field Names:
+DEFAULT_MACRO CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_2 No
+CSV2_2_ENFORCE_STRICT_SCHEMA "$(CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_2)"
+GUI CHOICE CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_2 Yes%No Enforce Strict Schema:
+DEFAULT_MACRO CSV2_IN_FIELD_VALUES_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_FIELD_VALUES_GROUP_CSV2_2 FME_DISCLOSURE_CLOSED%CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_2 Field Values
+DEFAULT_MACRO CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_2 Yes
+CSV2_2_TRIM_FIELD_VALUE_QUALIFIERS "$(CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_2)"
+GUI CHOICE CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_2 Yes%No Trim Field Qualifier Characters:
+DEFAULT_MACRO CSV2_IN_ENCODING_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_ENCODING_GROUP_CSV2_2 FME_DISCLOSURE_CLOSED%CSV2_IN_ENCODING_CSV2_2%CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_2 Encoding
+DEFAULT_MACRO CSV2_IN_ENCODING_CSV2_2 UTF-8
+CSV2_2_ENCODING "$(CSV2_IN_ENCODING_CSV2_2)"
+GUI STRING_OR_ENCODING CSV2_IN_ENCODING_CSV2_2 fme-system%* Character Encoding:
+DEFAULT_MACRO CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_2 No
+CSV2_2_PRESERVE_SOURCE_ENCODING "$(CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_2)"
+GUI CHOICE CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_2 Yes%No Preserve Source Encoding:
+DEFAULT_MACRO CSV2_IN_SKIPPED_LINES_GROUP_CSV2_2 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_IN_SKIPPED_LINES_GROUP_CSV2_2 FME_DISCLOSURE_CLOSED%CSV2_IN_READ_SKIPPED_LINES_CSV2_2 Skipped Lines
+DEFAULT_MACRO CSV2_IN_READ_SKIPPED_LINES_CSV2_2 No
+CSV2_2_READ_SKIPPED_LINES "$(CSV2_IN_READ_SKIPPED_LINES_CSV2_2)"
+GUI CHOICE CSV2_IN_READ_SKIPPED_LINES_CSV2_2 Yes%No Read Skipped Lines:
+DEFAULT_MACRO CSV2_IN_SCAN_MAX_ROWS_CSV2_2 10000
+CSV2_2_SCAN_MAX_ROWS "$(CSV2_IN_SCAN_MAX_ROWS_CSV2_2)"
+DEFAULT_MACRO CSV2_IN_SCAN_TYPES_CSV2_2 Yes
+CSV2_2_SCAN_TYPES "$(CSV2_IN_SCAN_TYPES_CSV2_2)"
+DEFAULT_MACRO CSV2_IN_SCAN_ADDITIONAL_FIELDS_CSV2_2 No
+CSV2_2_SCAN_ADDITIONAL_FIELDS "$(CSV2_IN_SCAN_ADDITIONAL_FIELDS_CSV2_2)"
+DEFAULT_MACRO CSV2_IN_EXPOSE_ATTRS_GROUP_CSV2_2 
+CSV2_2_EXPOSE_ATTRS_GROUP "$(CSV2_IN_EXPOSE_ATTRS_GROUP_CSV2_2)"
+DEFAULT_MACRO CSV2_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_CSV2_2 Yes
+CSV2_2_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS "$(CSV2_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_CSV2_2)"
+# ===========================================================================
+DEFAULT_MACRO CSV2_IN_NETWORK_AUTHENTICATION_CSV2_2 
+CSV2_2_NETWORK_AUTHENTICATION "$(CSV2_IN_NETWORK_AUTHENTICATION_CSV2_2)"
+GUI OPTIONAL AUTHENTICATOR CSV2_IN_NETWORK_AUTHENTICATION_CSV2_2 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================ 
+DEFAULT_MACRO CSV2_IN_ATTRIBUTE_READING_CSV2_2 DEFLINE
+CSV2_2_ATTRIBUTE_READING "$(CSV2_IN_ATTRIBUTE_READING_CSV2_2)"
+# ============================================================================ 
+CSV2_2_GENERATE_FME_BUILD_NUM 20200
+CSV2_2_DATASET "$(SourceDataset_CSV2_2)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "SHAPEFILE_2"
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_2
+# ============================================================================
+# The following GUI line prompts for a folder to be used as the
+# the destination for the Esri Shapefiles.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be written.
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_SHAPEFILE_2 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_2
+DEFAULT_MACRO DestDataset_SHAPEFILE_2 $(DestDataset_SHAPEFILE_5)
+GUI DIRNAME DestDataset_SHAPEFILE_2 Destination Esri Shapefile Folder:
+SHAPEFILE_2_COORDINATE_SYSTEM_GRANULARITY FEATURE_TYPE
+DEFAULT_MACRO SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_2 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_2 SHAPEFILE_OUT_ENCODING_SHAPEFILE_2%SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_2%SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_2%SHAPEFILE_OUT_DIMENSION%SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_2 Writer Parameters
+# ============================================================================
+# The following keyword allows the user to choose what encoding to
+# use for outputting the shapefile
+DEFAULT_MACRO SHAPEFILE_OUT_ENCODING_SHAPEFILE_2 fme-source-encoding
+SHAPEFILE_2_ENCODING "$(SHAPEFILE_OUT_ENCODING_SHAPEFILE_2)"
+GUI STRING_OR_ENCODING SHAPEFILE_OUT_ENCODING_SHAPEFILE_2 fme-source-encoding%fme-system%* Character Encoding
+# ============================================================================
+# Specifies whether or not the reader will generate spatial index files
+DEFAULT_MACRO SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_2 NONE
+SHAPEFILE_2_SPATIAL_INDEXES "$(SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_2)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_2 None,NONE%"\"ArcGIS Compatible Spatial Index (.sbn)\",SBN"%"\"QGIS and MapServer Spatial Index (.qix)\",QIX"%"\"Both ArcGIS and QGIS/MapServer Compatible (.sbn<space>and<space>.qix)\",BOTH" Create Spatial Index:
+DEFAULT_MACRO SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_2 No
+SHAPEFILE_2_COMPRESSED_FILE "$(SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_2)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_2 Yes%No Create Compressed Shapefile (.shz)
+DEFAULT_MACRO SHAPEFILE_OUT_DIMENSION_SHAPEFILE_2 AUTO
+SHAPEFILE_2_DIMENSION "$(SHAPEFILE_OUT_DIMENSION_SHAPEFILE_2)"
+DEFAULT_MACRO SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_2 TIMESTAMP_STRING
+SHAPEFILE_2_DATETIME_STORAGE "$(SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_2)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_2 "\"As String <openparen>FME Datetime Format<closeparen>\",TIMESTAMP_STRING"%"\"Date <openparen>YYYYMMDD only<closeparen>\",DATE_ONLY" Datetime Type Storage
+DEFAULT_MACRO SHAPEFILE_OUT_ADVANCED_SHAPEFILE_2 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_ADVANCED_SHAPEFILE_2 SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_2%SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_2%SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_2 Advanced
+DEFAULT_MACRO SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_2 PATCH
+SHAPEFILE_2_SURFACE_SOLID_STORAGE "$(SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_2)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_2 Multipatch,PATCH%Polygon,POLYGON Surface and Solid Storage
+# ============================================================================
+# The following GUI line sets whether measure values in the shapefiles should
+# be treated as elevations.
+DEFAULT_MACRO SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_2 No
+SHAPEFILE_2_MEASURES_AS_Z "$(SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_2)"
+GUI CHOICE SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_2 Yes%No Treat Elevation as Measures
+DEFAULT_MACRO SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_2 Yes
+SHAPEFILE_2_DATASET_SPLITTING "$(SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_2)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_2 Yes%No Split Dataset into 2GB Files
+# ============================================================================
+# Opt in for destination dataset type vs format type validation
+DEFAULT_MACRO SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_2 Yes
+SHAPEFILE_2_DESTINATION_DATASETTYPE_VALIDATION "$(SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_2)"
+# ============================================================================ 
+SHAPEFILE_2_GENERATE_FME_BUILD_NUM 20200
+SHAPEFILE_2_ENCODING $(SHAPEFILE_OUT_ENCODING_SHAPEFILE_2)
+SHAPEFILE_2_DATASET "$(DestDataset_SHAPEFILE_2)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "SHAPEFILE_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_1
+# ============================================================================
+# The following GUI line prompts for a folder to be used as the
+# the destination for the Esri Shapefiles.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be written.
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_SHAPEFILE_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_1
+DEFAULT_MACRO DestDataset_SHAPEFILE_1 $(DestDataset_SHAPEFILE)
+GUI DIRNAME DestDataset_SHAPEFILE_1 Destination Esri Shapefile Folder:
+SHAPEFILE_1_COORDINATE_SYSTEM_GRANULARITY FEATURE_TYPE
+DEFAULT_MACRO SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_1 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_1 SHAPEFILE_OUT_ENCODING_SHAPEFILE_1%SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1%SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1%SHAPEFILE_OUT_DIMENSION%SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1 Writer Parameters
+# ============================================================================
+# The following keyword allows the user to choose what encoding to
+# use for outputting the shapefile
+DEFAULT_MACRO SHAPEFILE_OUT_ENCODING_SHAPEFILE_1 fme-source-encoding
+SHAPEFILE_1_ENCODING "$(SHAPEFILE_OUT_ENCODING_SHAPEFILE_1)"
+GUI STRING_OR_ENCODING SHAPEFILE_OUT_ENCODING_SHAPEFILE_1 fme-source-encoding%fme-system%* Character Encoding
+# ============================================================================
+# Specifies whether or not the reader will generate spatial index files
+DEFAULT_MACRO SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1 NONE
+SHAPEFILE_1_SPATIAL_INDEXES "$(SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1 None,NONE%"\"ArcGIS Compatible Spatial Index (.sbn)\",SBN"%"\"QGIS and MapServer Spatial Index (.qix)\",QIX"%"\"Both ArcGIS and QGIS/MapServer Compatible (.sbn<space>and<space>.qix)\",BOTH" Create Spatial Index:
+DEFAULT_MACRO SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1 No
+SHAPEFILE_1_COMPRESSED_FILE "$(SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1 Yes%No Create Compressed Shapefile (.shz)
+DEFAULT_MACRO SHAPEFILE_OUT_DIMENSION_SHAPEFILE_1 AUTO
+SHAPEFILE_1_DIMENSION "$(SHAPEFILE_OUT_DIMENSION_SHAPEFILE_1)"
+DEFAULT_MACRO SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1 TIMESTAMP_STRING
+SHAPEFILE_1_DATETIME_STORAGE "$(SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1 "\"As String <openparen>FME Datetime Format<closeparen>\",TIMESTAMP_STRING"%"\"Date <openparen>YYYYMMDD only<closeparen>\",DATE_ONLY" Datetime Type Storage
+DEFAULT_MACRO SHAPEFILE_OUT_ADVANCED_SHAPEFILE_1 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_ADVANCED_SHAPEFILE_1 SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1%SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1%SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1 Advanced
+DEFAULT_MACRO SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1 PATCH
+SHAPEFILE_1_SURFACE_SOLID_STORAGE "$(SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1 Multipatch,PATCH%Polygon,POLYGON Surface and Solid Storage
+# ============================================================================
+# The following GUI line sets whether measure values in the shapefiles should
+# be treated as elevations.
+DEFAULT_MACRO SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1 No
+SHAPEFILE_1_MEASURES_AS_Z "$(SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1)"
+GUI CHOICE SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1 Yes%No Treat Elevation as Measures
+DEFAULT_MACRO SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1 Yes
+SHAPEFILE_1_DATASET_SPLITTING "$(SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1 Yes%No Split Dataset into 2GB Files
+# ============================================================================
+# Opt in for destination dataset type vs format type validation
+DEFAULT_MACRO SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_1 Yes
+SHAPEFILE_1_DESTINATION_DATASETTYPE_VALIDATION "$(SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_1)"
+# ============================================================================ 
+SHAPEFILE_1_GENERATE_FME_BUILD_NUM 20200
+SHAPEFILE_1_ENCODING $(SHAPEFILE_OUT_ENCODING_SHAPEFILE_1)
+SHAPEFILE_1_DATASET "$(DestDataset_SHAPEFILE_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "SHAPEFILE_3"
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_3
+# ============================================================================
+# The following GUI line prompts for a folder to be used as the
+# the destination for the Esri Shapefiles.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be written.
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_SHAPEFILE_3 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_3
+DEFAULT_MACRO DestDataset_SHAPEFILE_3 $(DestDataset_SHAPEFILE_4)
+GUI DIRNAME DestDataset_SHAPEFILE_3 Destination Esri Shapefile Folder:
+SHAPEFILE_3_COORDINATE_SYSTEM_GRANULARITY FEATURE_TYPE
+DEFAULT_MACRO SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_3 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_3 SHAPEFILE_OUT_ENCODING_SHAPEFILE_3%SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_3%SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_3%SHAPEFILE_OUT_DIMENSION%SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_3 Writer Parameters
+# ============================================================================
+# The following keyword allows the user to choose what encoding to
+# use for outputting the shapefile
+DEFAULT_MACRO SHAPEFILE_OUT_ENCODING_SHAPEFILE_3 fme-source-encoding
+SHAPEFILE_3_ENCODING "$(SHAPEFILE_OUT_ENCODING_SHAPEFILE_3)"
+GUI STRING_OR_ENCODING SHAPEFILE_OUT_ENCODING_SHAPEFILE_3 fme-source-encoding%fme-system%* Character Encoding
+# ============================================================================
+# Specifies whether or not the reader will generate spatial index files
+DEFAULT_MACRO SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_3 NONE
+SHAPEFILE_3_SPATIAL_INDEXES "$(SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_3)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_3 None,NONE%"\"ArcGIS Compatible Spatial Index (.sbn)\",SBN"%"\"QGIS and MapServer Spatial Index (.qix)\",QIX"%"\"Both ArcGIS and QGIS/MapServer Compatible (.sbn<space>and<space>.qix)\",BOTH" Create Spatial Index:
+DEFAULT_MACRO SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_3 No
+SHAPEFILE_3_COMPRESSED_FILE "$(SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_3)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_3 Yes%No Create Compressed Shapefile (.shz)
+DEFAULT_MACRO SHAPEFILE_OUT_DIMENSION_SHAPEFILE_3 AUTO
+SHAPEFILE_3_DIMENSION "$(SHAPEFILE_OUT_DIMENSION_SHAPEFILE_3)"
+DEFAULT_MACRO SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_3 TIMESTAMP_STRING
+SHAPEFILE_3_DATETIME_STORAGE "$(SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_3)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_3 "\"As String <openparen>FME Datetime Format<closeparen>\",TIMESTAMP_STRING"%"\"Date <openparen>YYYYMMDD only<closeparen>\",DATE_ONLY" Datetime Type Storage
+DEFAULT_MACRO SHAPEFILE_OUT_ADVANCED_SHAPEFILE_3 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_ADVANCED_SHAPEFILE_3 SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_3%SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_3%SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_3 Advanced
+DEFAULT_MACRO SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_3 PATCH
+SHAPEFILE_3_SURFACE_SOLID_STORAGE "$(SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_3)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_3 Multipatch,PATCH%Polygon,POLYGON Surface and Solid Storage
+# ============================================================================
+# The following GUI line sets whether measure values in the shapefiles should
+# be treated as elevations.
+DEFAULT_MACRO SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_3 No
+SHAPEFILE_3_MEASURES_AS_Z "$(SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_3)"
+GUI CHOICE SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_3 Yes%No Treat Elevation as Measures
+DEFAULT_MACRO SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_3 Yes
+SHAPEFILE_3_DATASET_SPLITTING "$(SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_3)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_3 Yes%No Split Dataset into 2GB Files
+# ============================================================================
+# Opt in for destination dataset type vs format type validation
+DEFAULT_MACRO SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_3 Yes
+SHAPEFILE_3_DESTINATION_DATASETTYPE_VALIDATION "$(SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_3)"
+# ============================================================================ 
+SHAPEFILE_3_GENERATE_FME_BUILD_NUM 20200
+SHAPEFILE_3_ENCODING $(SHAPEFILE_OUT_ENCODING_SHAPEFILE_3)
+SHAPEFILE_3_DATASET "$(DestDataset_SHAPEFILE_3)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)CSV_cleaning_and_converting.log"
+LOG_APPEND NO
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+DEFAULT_MACRO DATASET_KEYWORD_CSV2_2 CSV2_2
+DEFAULT_MACRO DATASET_KEYWORD_SHAPEFILE_2 SHAPEFILE_2
+DEFAULT_MACRO DATASET_KEYWORD_SHAPEFILE_1 SHAPEFILE_1
+DEFAULT_MACRO DATASET_KEYWORD_SHAPEFILE_3 SHAPEFILE_3
+# -------------------------------------------------------------------------
+
+CSV2_2_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME CSV_cleaning_and_converting
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   MULTI_READER_KEYWORD $(DATASET_KEYWORD_CSV2_2)   INPUT FEATURE_TYPE *    ROUTE CSV2 CSV2_2::CSV multi_reader_keyword,$(DATASET_KEYWORD_CSV2_2) TO FME_GENERIC ::CSV ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+CSV2_2_MERGE_DEF CSV2_2::CSV EXACT CSV DEFLINE fme_attribute_reading,defined,id,uint32,name,string,host_id,uint32,host_name,string,neighbourhood_group,string,neighbourhood,string,latitude,y_coordinate,longitude,x_coordinate,room_type,string,price,uint16,minimum_nights,uint16,number_of_reviews,uint16,last_review,string,reviews_per_month,real32,calculated_host_listings_count,uint8,availability_365,uint16
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "CSV(CSV2_2) Splitter"    INPUT FEATURE_TYPE CSV    OUTPUT FEATURE_TYPE CSV_CSV2_2
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Price_Checker    INPUT  FEATURE_TYPE CSV_CSV2_2    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>price<closeparen>,Price_Checker)" > 0 ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Price_Checker_PASSED
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Minimum_Nights    INPUT  FEATURE_TYPE Price_Checker_PASSED    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>minimum_nights<closeparen>,Minimum_Nights)" <= 30 ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Minimum_Nights_PASSED
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} DuplicateRemoverFactory    FACTORY_NAME Remove_Duplicate_Places    COMMAND_PARM_EVALUATION SINGLE_PASS    SUPPORTS_FEATURE_TABLES    INPUT  FEATURE_TYPE Minimum_Nights_PASSED    KEY_ATTRIBUTES { name price }    INPUT_IS_ORDERED NO    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT UNIQUE FEATURE_TYPE Remove_Duplicate_Places_UNIQUE
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Has_Reviews    INPUT  FEATURE_TYPE Remove_Duplicate_Places_UNIQUE    TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>number_of_reviews<closeparen>,Has_Reviews)" > 0 ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Has_Reviews_PASSED
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME Valid_Host_Name    INPUT  FEATURE_TYPE Has_Reviews_PASSED    TEST host_name NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>host_name<closeparen>,Valid_Host_Name)" NOT_= <openparen>Email<space>hidden<space>by<space>Airbnb<closeparen> ENCODED    BOOLEAN_OPERATOR COMPOSITE    COMPOSITE_TEST_EXPR "1 AND 2"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE Valid_Host_Name_PASSED
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME AttributeManager    INPUT  FEATURE_TYPE Valid_Host_Name_PASSED    MULTI_FEATURE_MODE NO     NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    ATTR_ACTION { "id" "Listing<space>ID" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "name" "Listing<space>Name" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "neighbourhood_group" "Borough" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "neighbourhood" "Neighborhood" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "latitude" "Latitude" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "longitude" "Longitude" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "room_type" "Type<space>of<space>Room" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "price" "Average<space>price<solidus>night" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "minimum_nights" "Minimum<space>Stay" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "number_of_reviews" "number_of_reviews" "" "REMOVE" }      ATTR_ACTION { "last_review" "last_review" "" "REMOVE" }      ATTR_ACTION { "reviews_per_month" "reviews_per_month" "" "REMOVE" }      ATTR_ACTION { "calculated_host_listings_count" "calculated_host_listings_count" "" "REMOVE" }      ATTR_ACTION { "availability_365" "availability_365" "" "REMOVE" }      ATTR_ACTION { "host_id" "Host<space>ID" "" "RENAME_SET_VALUE" }      ATTR_ACTION { "host_name" "Host<space>Name" "" "RENAME_SET_VALUE" }    OUTPUT OUTPUT FEATURE_TYPE AttributeManager_OUTPUT
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC AttributeManager_OUTPUT TO SHAPEFILE __GO_TO_FINAL_OUTPUT_ROUTER__ <at>CopyAttributes<openparen>ENCODED<comma>Place_ID<comma>Listing<lt>space<gt>ID<comma>Place_Name<comma>Listing<lt>space<gt>Name<comma>Area<comma>Neighborhood<comma>Room_Type<comma>Type<lt>space<gt>of<lt>space<gt>Room<comma>USD_Night<comma>Average<lt>space<gt>price<lt>solidus<gt>night<comma>Min_Stay<comma>Minimum<lt>space<gt>Stay<comma>Host_ID<comma>Host<lt>space<gt>ID<comma>Host_Name<comma>Host<lt>space<gt>Name<closeparen>,multi_writer_id,2,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>NYC<lt>space<gt>Airbnb<lt>apos<gt>s<lt>space<gt>with<lt>space<gt>reviews<closeparen> GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+
+# -------------------------------------------------------------------------
+SHAPEFILE_3_DEF "NYC Airbnb's with reviews"   shapefile_type               shapefile_first_feature   DIMENSION                    AUTO   Place_ID                     double   Place_Name                   char(254)   Borough                      char(254)   Area                         char(254)   Room_Type                    char(254)   USD_Night                    long   Min_Stay                     long   Host_ID                      double   Host_Name                    char(254)   Latitude                     double   Longitude                    double
