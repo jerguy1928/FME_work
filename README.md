@@ -10,3 +10,7 @@ cleaning operations. The operations I performed include:
 4. Removed entries that didn't have the name for the host or an invalid host name
 5. Renamed the attributes to more readable names
 6. Exported the data as an ESRI shapefile
+
+
+The original data set was found here:
+https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data/data#
